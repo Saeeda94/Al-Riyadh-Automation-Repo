@@ -1,6 +1,5 @@
 package Pages.UserPortal;
 
-import CoreElements.Button;
 import CoreElements.Element;
 import CoreElements.Label;
 import CoreElements.TextBox;

@@ -16,6 +16,6 @@ public class SubmitForm extends GlobalSetup {
     public void submitChecklist() throws InterruptedException {
         loginTests.testInspectorValidLogin();
         homePage.openForm().selectActivity();
-        checkList.fillForm(1);
+        checkList.fillForm();
     }
 }

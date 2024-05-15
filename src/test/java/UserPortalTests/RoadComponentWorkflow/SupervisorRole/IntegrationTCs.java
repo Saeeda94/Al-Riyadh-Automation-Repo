@@ -17,7 +17,7 @@ public class IntegrationTCs extends GlobalSetup {
     public void testIntegration1()throws InterruptedException{
         loginPage.fillLoginForm("33s","123456");
         homePage.openForm();
-        checkList.fillForm(2);
+        checkList.fillForm();
     }
     @Test
     public void testIntegration2() throws InterruptedException {

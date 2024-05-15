@@ -28,10 +28,6 @@ public class Utilities {
         webDriver.maximizeWindow();
     }
 
-
-
-
-
     /**************** Switch to new tab *******************/
     public void switchToNewTab() {
         String mainWindowHandle = webDriver.getWebDriver().getWindowHandle();

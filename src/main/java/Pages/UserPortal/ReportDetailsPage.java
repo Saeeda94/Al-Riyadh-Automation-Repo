@@ -1,4 +1,6 @@
 package Pages.UserPortal;
+import CoreElements.Element;
+import Pages.PagesElements.ReportDetailsElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,8 +13,7 @@ public class ReportDetailsPage {
     private WebDriver driver;
 
     // Locator for the card body element
-    public By reportNumber = By.xpath("//chk-card/div/div[2]/div/div/div/div[1]/p");
-
+    ReportDetailsElements reportDetailsElements=new ReportDetailsElements(Element.getWebDriver());
     // Constructor
     public ReportDetailsPage(WebDriver driver){
         this.driver = driver;
@@ -21,6 +22,6 @@ public class ReportDetailsPage {
     public String getCardBodyText(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//chk-card/div/div[2]/div/div/div/div[1]/p"))));
-        return driver.findElement(reportNumber).getText();
+        return driver.findElement(reportDetailsElements.reportNumber).getText();
     }
 }

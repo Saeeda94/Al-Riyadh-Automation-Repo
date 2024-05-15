@@ -1,7 +1,6 @@
 package Pages.UserPortal;
 
 import CoreElements.Element;
-import CoreElements.Label;
 import Pages.PagesElements.TasksElements;
 import org.openqa.selenium.WebDriver;
 public class TasksPage {

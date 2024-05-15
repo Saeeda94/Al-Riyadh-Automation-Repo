@@ -16,6 +16,7 @@ public class HomePage {
         this.driver = driver;
     }
     HomePageElements homePageElements=new HomePageElements(Element.getWebDriver());
+
     public boolean getGreetingLabel() throws InterruptedException {
         Thread.sleep(2000);
         return homePageElements.greetingMSG.isDisplayed(By.xpath("//span[contains(@class,'greeting')]"));

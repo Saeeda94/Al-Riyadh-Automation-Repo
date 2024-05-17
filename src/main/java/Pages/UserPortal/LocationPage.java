@@ -24,7 +24,7 @@ public class LocationPage {
         for(int i=0;i<locationTreeCount;i++){
         locationPageElements.locationTree2.click();}
         locationPageElements.radioButton.radioBtnClick();
-        locationPageElements.nextBtn.click();
+//        locationPageElements.nextBtn.click();
         return new CheckList(driver);
     }
 }

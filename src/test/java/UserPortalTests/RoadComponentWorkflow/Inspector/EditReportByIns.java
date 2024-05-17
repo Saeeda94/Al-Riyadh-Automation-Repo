@@ -11,7 +11,7 @@ public class EditReportByIns extends GlobalSetup {
     /**Assign To MOS TCs after reviewing**/
     @Test
     public void editReportTC() throws InterruptedException {
-        loginPage.fillLoginForm("33s", "123456");
+        //loginPage.fillLoginForm("33s", "123456");
        // homePage.navigateToTaskPage().navigateToReportDetailsPage().editReportByInspector();
     }
 

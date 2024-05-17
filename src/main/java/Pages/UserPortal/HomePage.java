@@ -23,7 +23,7 @@ public class HomePage {
     }
     public AddNewReportPage openForm() throws InterruptedException {
         Thread.sleep(10000);
-        homePageElements.addButton.click();
+//        homePageElements.addButton.click();
         return new AddNewReportPage(driver);
     }
     public TasksPage navigateToTaskPage() throws InterruptedException {

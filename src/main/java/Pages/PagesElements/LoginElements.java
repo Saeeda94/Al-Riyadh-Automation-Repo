@@ -12,5 +12,5 @@ public class LoginElements {
     }
     public TextBox userNameInput=new TextBox(By.xpath("//chk-input-text/input"));
     public TextBox passwordInput=new TextBox(By.xpath("//chk-input-password/p-password/div/input"));
-    public Button loginBtn=new Button(By.xpath("//form/chk-button"));
+    public Button loginBtn=new Button(By.xpath("//*[@id=\"login.button\"]/button"));
 }

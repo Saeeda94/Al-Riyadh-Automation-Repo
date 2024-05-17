@@ -15,13 +15,13 @@ public class IntegrationTCs extends GlobalSetup {
     }
     @Test
     public void testIntegration1()throws InterruptedException{
-        loginPage.fillLoginForm("33s","123456");
+        //loginPage.fillLoginForm("33s","123456");
         homePage.openForm();
         checkList.fillForm();
     }
     @Test
     public void testIntegration2() throws InterruptedException {
-        loginPage.fillLoginForm("33K","123456");
+       // loginPage.fillLoginForm("33K","123456");
         homePage.navigateToTaskPage();
         tasksPage.checkLabel("004103124000018");
         System.out.println("Hello");

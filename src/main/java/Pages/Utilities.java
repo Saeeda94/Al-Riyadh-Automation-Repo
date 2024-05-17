@@ -9,8 +9,6 @@ import java.util.Set;
 
 public class Utilities {
     public Driver webDriver;
-    public String PORTALBASE="portal";
-    public String SITEBASE="site";
 
     public Utilities(Driver webDriver) {
         this.webDriver = webDriver;
@@ -18,13 +16,8 @@ public class Utilities {
     }
 
     /****************  open the user/admin portal *******************/
-    public void openSite(String base) {
-        if (base.equals(PORTALBASE)) {
-            webDriver.goTo("http://yxdemo.eastus.cloudapp.azure.com/CHECK/Demo/AlRiyadh/Portal/Account/Login");
-        }
-        else if (base.equals(SITEBASE)){
-            webDriver.goTo("http://yxdemo.eastus.cloudapp.azure.com/CHECK/Demo/AlRiyadh/Site/login");
-        }
+    public void openSite() {
+        webDriver.goTo("http://yxdemo.eastus.cloudapp.azure.com/CHECK/Demo/AlRiyadh/Site/login");
         webDriver.maximizeWindow();
     }
 

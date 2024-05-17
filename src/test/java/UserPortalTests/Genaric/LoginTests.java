@@ -12,8 +12,9 @@ public class LoginTests extends GlobalSetup {
     LoginPage loginPage=new LoginPage(driver.getWebDriver());
     @Test(priority = 1)
     public void testInspectorValidLogin() throws InterruptedException {
-        Assert.assertTrue(loginPage.fillLoginForm(successInspectorMail,successPassword).getGreetingLabel(),"Login Failed");
-        System.out.println("Hello");
+        boolean greetingMSG=loginPage.fillLoginForm(successInspectorMail,successPassword)
+                .getGreetingLabel();
+        Assert.assertTrue(greetingMSG,"Login Failed");
     }
     @Test(priority = 2)
     public void testSupervisorValidLogin() throws InterruptedException {

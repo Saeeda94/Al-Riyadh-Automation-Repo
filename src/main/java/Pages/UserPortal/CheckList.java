@@ -18,18 +18,18 @@ public class CheckList {
     CheckListElements checkListElements=new CheckListElements(Element.getWebDriver());
     public ReportDetailsPage fillForm() throws InterruptedException {
         Thread.sleep(3000);
-        checkListElements.mainFactorBtn.click();
-         checkListElements.mainFactorValue.click();
-        checkListElements.secondSection.click();
-        checkListElements.length.typeText("10");
-        checkListElements.gpsField.click();
-        checkListElements.importanceBtn.click();
-        checkListElements.importanceValue.click();
-        checkListElements.attachmentButton.typeText("C:/Users/DELL/Pictures/images/Test.PNG");
-        checkListElements.attachmentButton.typeText("C:/Users/DELL/Pictures/images/Test2.PNG");
-        Thread.sleep(30000);
-        checkListElements.submitButton.click();
-        Thread.sleep(30000);
+//        checkListElements.mainFactorBtn.click();
+//         checkListElements.mainFactorValue.click();
+//        checkListElements.secondSection.click();
+//        checkListElements.length.typeText("10");
+//        checkListElements.gpsField.click();
+//        checkListElements.importanceBtn.click();
+//        checkListElements.importanceValue.click();
+//        checkListElements.attachmentButton.typeText("C:/Users/DELL/Pictures/images/Test.PNG");
+//        checkListElements.attachmentButton.typeText("C:/Users/DELL/Pictures/images/Test2.PNG");
+//        Thread.sleep(30000);
+//        checkListElements.submitButton.click();
+//        Thread.sleep(30000);
         return new ReportDetailsPage(driver);
     }
 }

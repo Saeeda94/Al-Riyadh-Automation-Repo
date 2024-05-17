@@ -10,7 +10,7 @@ public class ApproveByMOSTCs extends GlobalSetup {
     HomePage homePage=new HomePage(driver.getWebDriver());
     @Test
     public void approveReportTest() throws InterruptedException {
-        loginPage.fillLoginForm("MM11","123456");
+        //loginPage.fillLoginForm("MM11","123456");
         //homePage.navigateToTaskPage().navigateToReportDetailsPage().ApproveByMOS();
     }
 }

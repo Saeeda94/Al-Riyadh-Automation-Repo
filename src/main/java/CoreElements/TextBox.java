@@ -1,5 +1,6 @@
 package CoreElements;
 
+import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -8,15 +9,20 @@ public class TextBox extends Element {
     public TextBox(By typedElement) {
         this.setLocator(typedElement);
     }
-
     // Type method
-    public void typeText(String txt) {
-        highlightElements();
-        webDriver.findElement(locator).sendKeys(txt);
+    @SneakyThrows
+    public void setText(String data) {
+        waitElement(locator);
+        find(locator).isEnabled();
+        find(locator).clear();
+        find(locator).sendKeys(data);
     }
+
     public void clearText(){
-        highlightElements();
-        webDriver.findElement(locator).clear();
+        waitElement(locator);
+        find(locator).isEnabled();
+        find(locator).clear();
+        find(locator).clear();
     }
 
 }

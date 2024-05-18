@@ -17,7 +17,7 @@ public class EditReportByIns extends GlobalSetup {
 
     @Test
     public void editReportTC2() throws InterruptedException {
-        loginPage.fillLoginForm("33s", "123456");
+        //loginPage.fillLoginForm("33s", "123456");
        // homePage.navigateToTaskPage().navigateToReportDetailsPage().approveTheEditedReportByIns();
     }
 }

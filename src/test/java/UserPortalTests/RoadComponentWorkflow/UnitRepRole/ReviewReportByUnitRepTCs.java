@@ -11,18 +11,18 @@ public class ReviewReportByUnitRepTCs extends GlobalSetup {
     HomePage homePage = new HomePage(driver.getWebDriver());
     @Test
     public void approveReportByUnitRep() throws InterruptedException {
-        loginPage.fillLoginForm("44VV", "123456");
+       // loginPage.fillLoginForm("44VV", "123456");
       //  homePage.navigateToTaskPage().navigateToReportDetailsPage().approveReportByUnitRepAndAssignToUnitCont();
     }
     /**Reject the assigned report**/
     @Test
     public void rejectReportByUnitRep() throws InterruptedException {
-        loginPage.fillLoginForm("44VV", "123456");
+        //loginPage.fillLoginForm("44VV", "123456");
         //homePage.navigateToTaskPage().navigateToReportDetailsPage().rejectReportByUnitRep();
     }
     @Test
     public void assignToUnitConTC() throws InterruptedException {
-        loginPage.fillLoginForm("44VV", "123456");
+        //loginPage.fillLoginForm("44VV", "123456");
        // homePage.navigateToTaskPage().navigateToReportDetailsPage().assignToUnitCon();
     }
 

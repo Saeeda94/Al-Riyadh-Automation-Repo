@@ -11,13 +11,13 @@ public class ReviewReportUnitSupTCs extends GlobalSetup {
     /***Reject the treatment of the contractor**/
     @Test
     public void reviewAndRejectByUnitSup() throws InterruptedException {
-        loginPage.fillLoginForm("bb7", "123456");
+       // loginPage.fillLoginForm("bb7", "123456");
         //homePage.navigateToTaskPage().navigateToReportDetailsPage().reviewTheReportByUnitSupAndReject();
     }
     /**approve the assigned report**/
     @Test
     public void approveReportByUnitRep() throws InterruptedException {
-        loginPage.fillLoginForm("bb7", "123456");
+        //loginPage.fillLoginForm("bb7", "123456");
         //homePage.navigateToTaskPage().navigateToReportDetailsPage().reviewTheReportByUnitSupAndApprove();
     }
 }

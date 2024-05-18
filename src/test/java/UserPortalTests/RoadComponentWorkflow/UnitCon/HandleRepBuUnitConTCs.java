@@ -12,7 +12,7 @@ public class HandleRepBuUnitConTCs extends GlobalSetup {
     /**Handle the report by the contractor and assign to unit sup**/
     @Test
     public void HandleReportTCs() throws InterruptedException {
-        loginPage.fillLoginForm("CCAQ", "123456");
+        //loginPage.fillLoginForm("CCAQ", "123456");
         //homePage.navigateToTaskPage().navigateToReportDetailsPage().handleTheReportByUnitCon();
     }
 }

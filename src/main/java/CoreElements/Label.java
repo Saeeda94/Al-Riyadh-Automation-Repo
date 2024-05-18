@@ -7,15 +7,18 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
 
-public class Label extends Element{
+public class Label extends Element {
     //constructor
-    public Label(By label){
+    public Label(By label) {
         this.setLocator(label);
     }
-    public String getLabel(){
-        return webDriver.findElement(locator).getText();
+
+    public String getLabel() {
+        waitElement(locator);
+        return find(locator).getText();
     }
-    public void click(){
+
+    public void click() {
         waitElement(locator);
         find(locator).click();
         try {

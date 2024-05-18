@@ -262,7 +262,7 @@ public class Element {
         element.click();
     }
 
-    public boolean isDisplayed(By locator) {
+    public boolean isDisplayed() {
         return find(locator).isDisplayed();
     }
 

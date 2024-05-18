@@ -2,8 +2,12 @@ package Pages;
 
 import CoreElements.Driver;
 import CoreElements.Element;
+import lombok.SneakyThrows;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -15,7 +19,7 @@ public class Utilities {
         Element.setWebDriver(webDriver.getWebDriver());
     }
 
-    /****************  open the user/admin portal *******************/
+    /****************  open the user portal *******************/
     public void openSite() {
         webDriver.goTo("http://yxdemo.eastus.cloudapp.azure.com/CHECK/Demo/AlRiyadh/Site/login");
         webDriver.maximizeWindow();
@@ -46,5 +50,19 @@ public class Utilities {
             break;
         }
     }
+    @SneakyThrows
+    public void generateReport() {
+        //onGenerateAllureReport();
+        FileUtils.deleteDirectory(new File("target/allure-results"));
+    }
 
+    public void switchTab() {
+        ArrayList<String> tabs = new ArrayList<String>(webDriver.getWebDriver().getWindowHandles());
+        webDriver.getWebDriver().switchTo().window(tabs.get(1));
+    }
+
+    public void refresh() {
+        webDriver.getWebDriver().navigate().refresh();
+
+    }
 }

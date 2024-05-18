@@ -1,8 +1,8 @@
 package Pages.UserPortal;
 
 import CoreElements.Element;
+import CoreElements.Label;
 import Pages.PagesElements.LoginElements;
-import com.microsoft.schemas.office.office.STInsetMode;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
@@ -13,18 +13,40 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
+    public HomePage homePage=new HomePage(driver);
 
-
-    @Step("Fill Login Form")
-    public HomePage fillLoginForm(String userName,String password) {
+    @Step("Set User Name")
+    public LoginPage setUserName(String userName){
         loginElements.userNameInput.setText(userName);
+        return this;
+    }
+
+    @Step("Set Password")
+    public LoginPage setPassword(String password){
         loginElements.passwordInput.setText(password);
+        return this;
+    }
+    @Step("Click on login button")
+    public boolean fillLoginForm(){
         loginElements.loginBtn.click();
-        return new HomePage(driver);
+        return homePage.getGreetingLabel();
+    }
+    @Step("Set in valid username")
+    public LoginPage setInvalidUserName(){
+        loginElements.userNameInput.setText("invalid username");
+        return this;
+    }
+    @Step("Set in valid password")
+    public LoginPage setInvalidPassword(){
+        loginElements.passwordInput.setText("invalid password");
+        return this;
+    }
+    @Step("Click on login button")
+    public Label clickOnLoginBTNForInvalidCred(){
+        loginElements.loginBtn.click();
+        return loginElements.loginErrorMSG;
     }
     public void fillDataForInvalidLogin() {
-        loginElements.userNameInput.setText("invalid username");
-        loginElements.passwordInput.setText("invalid password");
         loginElements.loginBtn.click();
     }
 }

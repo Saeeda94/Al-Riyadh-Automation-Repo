@@ -5,30 +5,53 @@ import CoreElements.Element;
 import CoreElements.Label;
 import CoreElements.Link;
 import Pages.PagesElements.HomePageElements;
+import Pages.PagesElements.LoginElements;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    /*** Home Page Locators ***/
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
+    LoginElements loginElements=new LoginElements(Element.getWebDriver());
+
     HomePageElements homePageElements=new HomePageElements(Element.getWebDriver());
 
-    public boolean getGreetingLabel() throws InterruptedException {
-        Thread.sleep(2000);
-        return homePageElements.greetingMSG.isDisplayed(By.xpath("//span[contains(@class,'greeting')]"));
+    public boolean getGreetingLabel()  {
+        return homePageElements.greetingMSG.isDisplayed();
     }
     public AddNewReportPage openForm() throws InterruptedException {
-        Thread.sleep(10000);
 //        homePageElements.addButton.click();
         return new AddNewReportPage(driver);
     }
     public TasksPage navigateToTaskPage() throws InterruptedException {
-        Thread.sleep(3000);
         homePageElements.taskIcon.click();
         return new TasksPage(driver);
+    }
+
+    /*********************************************************************/
+
+    @Feature("Logout")
+    @Step("click on arrow button")
+    public HomePage clickOnArrowBTN(){
+        homePageElements.arrowDownBTN.click();
+        return this;
+    }
+    @Step("click on Logout Link")
+    public HomePage clickOnLogoutLink(){
+        homePageElements.logoutLink.click();
+        return this;
+    }
+    @Step("click on Logout Button")
+    public boolean clickOnLogoutBTN(){
+//        Alert alert = driver.switchTo().alert();
+//        alert.accept();
+      homePageElements.logoutButton.click();
+       return loginElements.loginBtn.isDisplayed();
     }
 }

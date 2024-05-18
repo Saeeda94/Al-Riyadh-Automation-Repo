@@ -2,8 +2,7 @@ package GlobalSetup;
 
 import CoreElements.Driver;
 import Pages.Utilities;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 public class GlobalSetup {
     public static Driver driver = new Driver();
@@ -14,7 +13,7 @@ public class GlobalSetup {
         utilities.openSite();
         utilities = new Utilities(driver);
     }
-    @AfterTest
+    @AfterSuite
     public void closeSite() {
         driver.tearDown();
     }

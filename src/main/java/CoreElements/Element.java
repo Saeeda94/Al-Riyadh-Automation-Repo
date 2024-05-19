@@ -1,6 +1,8 @@
 package CoreElements;
 
 import com.github.javafaker.Faker;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -23,14 +25,12 @@ import java.util.List;
 import java.util.Random;
 
 public class Element {
+    @Getter
     public static WebDriver webDriver;
     protected static Faker faker = new Faker();
+    @Setter
     public By locator;
     public SoftAssert softAssert = new SoftAssert();
-
-    public static WebDriver getWebDriver() {
-        return webDriver;
-    }
 
     public static void setWebDriver(WebDriver webDriver) {
         Element.webDriver = webDriver;
@@ -47,100 +47,6 @@ public class Element {
 
     public static WebElement setElement(String source) {
         return webDriver.findElement(By.xpath("//*[@data-axis-test-id='" + source + "']"));
-    }
-
-    public static String generateArabicFirstName() {
-        final String[] firstName = {"فاطمة", "زينب", "مريم", "خديجة", "نور", "لمى", "سارة", "عبدالله"
-                , "محمد"
-                , "أحمد"
-                , "علي"
-                , "مصطفى"
-                , "يوسف"
-                , "خالد"
-                , "عمر"
-                , "محمود"
-                , "سعيد"
-                , "حسين"
-                , "ناصر"
-                , "عبدالرحمن"
-                , "طارق"
-                , "عبدالعزيز"
-                , "عبدالكريم"
-                , "فارس"
-                , "رامي"
-                , "مجدي"
-                , "سليمان"
-                , "جمال"
-                , "عبداللطيف"
-                , "محسن"
-                , "صالح"
-                , "رضا"
-                , "زكريا"
-                , "نورالدين"
-                , "جلال"
-                , "عبدالملك"
-                , "قاسم"};
-        Random random = new Random();
-        return firstName[random.nextInt(firstName.length)];
-    }
-
-    public static String generateArabicLastName() {
-        final String[] MIDDLE_NAMES = {"عزيز", "محمد", "أحمد", "علي", "حسين", "محمود", "عبدالله"
-                , "محمد"
-                , "أحمد"
-                , "علي"
-                , "مصطفى"
-                , "يوسف"
-                , "خالد"
-                , "عمر"
-                , "محمود"
-                , "سعيد"
-                , "حسين"
-                , "ناصر"
-                , "عبدالرحمن"
-                , "طارق"
-                , "عبدالعزيز"
-                , "عبدالكريم"
-                , "فارس"
-                , "رامي"
-                , "مجدي"
-                , "سليمان"
-                , "جمال"
-                , "عبداللطيف"
-                , "محسن"
-                , "صالح"
-                , "رضا"
-                , "زكريا"
-                , "نورالدين"
-                , "جلال"
-                , "عبدالملك"
-                , "قاسم"
-                , "عمر"};
-
-        final String[] LAST_NAMES = {"عبد العال"
-                , "عبد الرحيم"
-                , "عبد الرحمن"
-                , "عبد الجبار"
-                , "عبد الصبور"
-                , "عبد المهيمن"
-                , "عبد العزيز"
-                , "عبد الملك"
-                , "عبد السلام",
-                "عبد المؤمن",
-                "عبد الخالق",
-                "عبدالله",
-                "عبد الرشيد",
-                "الملواني"
-                , "يسري",
-                "جمعة",
-                "خميس"
-
-        };
-        Random random = new Random();
-        String middleNameOne = MIDDLE_NAMES[random.nextInt(MIDDLE_NAMES.length)];
-        String middleNameTwo = MIDDLE_NAMES[random.nextInt(MIDDLE_NAMES.length)];
-        String lastName = LAST_NAMES[random.nextInt(LAST_NAMES.length)];
-        return middleNameOne + " " + middleNameTwo + " " + lastName;
     }
 
     public static int generateRNumber() {
@@ -165,10 +71,6 @@ public class Element {
         Date currentDatePlusOne = c.getTime();
         return String.valueOf(dateFormat.format(currentDatePlusOne)
                 .toLowerCase());
-    }
-
-    public void setLocator(By locator) {
-        this.locator = locator;
     }
 
     public String getText() {

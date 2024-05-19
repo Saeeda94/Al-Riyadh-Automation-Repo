@@ -7,11 +7,26 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
 
+/**
+ * This class represents a RadioButton element in a web page.
+ * It extends the Element class and inherits all its methods.
+ * It provides a method to click the RadioButton.
+ */
 public class RadioButton extends Element{
+    /**
+     * Constructor for the RadioButton class.
+     * It sets the locator for the RadioButton element.
+     * @param radioBtn The locator for the RadioButton element.
+     */
     public RadioButton(By radioBtn){
         this.setLocator(radioBtn);
     }
-    //Actions
+
+    /**
+     * Clicks on the RadioButton element located by the locator.
+     * Waits for the element to be visible before clicking.
+     * Also takes a screenshot after clicking and saves it in the specified location.
+     */
     public void radioBtnClick(){
         waitElement(locator);
         find(locator).click();

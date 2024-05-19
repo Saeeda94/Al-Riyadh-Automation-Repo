@@ -7,12 +7,26 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
 
+/**
+ * This class represents a CheckBox element in a web page.
+ * It extends the Element class and inherits all its methods.
+ * It provides a method to click the CheckBox and take a screenshot after clicking.
+ */
 public class CheckBox extends Element {
+    /**
+     * Constructor for the CheckBox class.
+     * It sets the locator for the CheckBox element.
+     * @param checkBox The locator for the CheckBox element.
+     */
     public CheckBox(By checkBox) {
         this.setLocator(checkBox);
     }
 
-    //Actions
+    /**
+     * Clicks on the CheckBox element located by the locator.
+     * Waits for the element to be visible before clicking.
+     * Also takes a screenshot after clicking and saves it in the specified location.
+     */
     public void click() {
         waitElement(locator);
         find(locator).click();

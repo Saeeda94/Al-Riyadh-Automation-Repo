@@ -5,26 +5,26 @@ import CoreElements.Element;
 import CoreElements.Link;
 import CoreElements.RadioButton;
 import Pages.PagesElements.LocationPageElements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LocationPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
+    private final LocationPageElements locationPageElements;
+    private static final int LOCATION_TREE_COUNT = 2;
 
-    /*** Location Page Locators ***/
     public LocationPage(WebDriver driver) {
         this.driver = driver;
+        this.locationPageElements = new LocationPageElements(Element.getWebDriver());
     }
-    LocationPageElements locationPageElements=new LocationPageElements(Element.getWebDriver());
-    int locationTreeCount=2;
+
     public CheckList navigateToCheckList() throws InterruptedException {
         Thread.sleep(50000);
         locationPageElements.locationTree1.click();
-        for(int i=0;i<locationTreeCount;i++){
-        locationPageElements.locationTree2.click();}
+        for(int i = 0; i < LOCATION_TREE_COUNT; i++){
+            locationPageElements.locationTree2.click();
+        }
         locationPageElements.radioButton.radioBtnClick();
-//        locationPageElements.nextBtn.click();
         return new CheckList(driver);
     }
 }

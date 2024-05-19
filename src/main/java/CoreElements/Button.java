@@ -8,12 +8,26 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
 
+/**
+ * This class represents a Button element in a web page.
+ * It extends the Element class and inherits all its methods.
+ * It provides a method to click the button and take a screenshot after clicking.
+ */
 public class Button extends Element{
-    //constructor
+    /**
+     * Constructor for the Button class.
+     * It sets the locator for the button element.
+     * @param button The locator for the button element.
+     */
     public Button(By button){
         this.setLocator(button);
     }
-    //Actions
+
+    /**
+     * Clicks on the button element located by the locator.
+     * Waits for the element to be visible before clicking.
+     * Also takes a screenshot after clicking and saves it in the specified location.
+     */
     @SneakyThrows
     public void click() {
         waitElement(locator);

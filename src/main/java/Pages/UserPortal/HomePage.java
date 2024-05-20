@@ -1,15 +1,10 @@
 package Pages.UserPortal;
 
-import CoreElements.Button;
 import CoreElements.Element;
-import CoreElements.Label;
-import CoreElements.Link;
 import Pages.PagesElements.HomePageElements;
 import Pages.PagesElements.LoginElements;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {

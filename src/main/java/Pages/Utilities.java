@@ -63,6 +63,5 @@ public class Utilities {
 
     public void refresh() {
         webDriver.getWebDriver().navigate().refresh();
-
     }
 }

@@ -5,18 +5,15 @@ import GlobalSetup.GlobalSetup;
 import Pages.UserPortal.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 public class LoginTests extends GlobalSetup {
-    String successInspectorMail = "KK78";
-    String successSupervisorMail = "road1.sup";
-    String successPassword = "123456";
+    String loginTestData = "TestData/Data/roadComponentsLoginData.json";
     LoginPage loginPage = new LoginPage(driver.getWebDriver());
 
     @Test
     public void testInspectorValidLogin() {
         boolean greetingMSG =
-                loginPage.setUserName(successInspectorMail)
-                        .setPassword(successPassword)
+                loginPage.setUserName(getJson(loginTestData, "inspector","inspectorUsername"))
+                        .setPassword(getJson(loginTestData, "inspector","inspectorPassword"))
                         .fillLoginForm();
         Assert.assertTrue(greetingMSG, "Login Failed");
     }
@@ -24,8 +21,8 @@ public class LoginTests extends GlobalSetup {
     @Test
     public void testInValidLogin() {
         Label msg =
-                loginPage.setInvalidUserName()
-                        .setInvalidPassword()
+                loginPage.setInvalidUserName(getJson(loginTestData, "inspector.inspectorInvalidUsername"))
+                        .setInvalidPassword(getJson(loginTestData, "inspector.inspectorInvalidPassword"))
                         .clickOnLoginBTNForInvalidCred();
         Assert.assertTrue((msg.isDisplayed()), "in valid login failed");
     }

@@ -32,13 +32,13 @@ public class LoginPage {
         return homePage.getGreetingLabel();
     }
     @Step("Set in valid username")
-    public LoginPage setInvalidUserName(){
-        loginElements.userNameInput.setText("invalid username");
+    public LoginPage setInvalidUserName(String userName){
+        loginElements.userNameInput.setText(userName);
         return this;
     }
     @Step("Set in valid password")
-    public LoginPage setInvalidPassword(){
-        loginElements.passwordInput.setText("invalid password");
+    public LoginPage setInvalidPassword(String password){
+        loginElements.passwordInput.setText(password);
         return this;
     }
     @Step("Click on login button")

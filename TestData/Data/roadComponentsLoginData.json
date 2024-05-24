@@ -1,0 +1,14 @@
+{
+  "inspector": {
+    "inspectorUsername": "KK78",
+    "inspectorPassword": "123456",
+    "inspectorInvalidUsername": "brad",
+    "inspectorInvalidPassword": "password"
+  },
+  "supervisor": {
+    "supervisorUsername": "KK78",
+    "supervisorPassword": "123456",
+    "supervisorInvalidUsername": "brad",
+    "supervisorInvalidPassword": "password"
+  }
+}

@@ -23,7 +23,7 @@ public class Driver {
                         ("--disable-notifications--"
                                 , "--remote-allow-origins=*"
                                 , "--incognito"));
-
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         webDriver = new ChromeDriver(options);
     }
 

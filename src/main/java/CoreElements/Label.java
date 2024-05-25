@@ -31,7 +31,10 @@ public class Label extends Element {
         waitElement(locator);
         return find(locator).getText();
     }
-
+    public boolean containText(String text){
+        waitElement(locator);
+        return find(locator).getText().contains(text);
+    }
     /**
      * Clicks on the Label element located by the locator.
      * Waits for the element to be visible before clicking.

@@ -5,6 +5,7 @@ import Pages.PagesElements.HomePageElements;
 import Pages.PagesElements.LoginElements;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
@@ -17,17 +18,22 @@ public class HomePage {
 
     HomePageElements homePageElements=new HomePageElements(Element.getWebDriver());
 
-    public boolean getGreetingLabel()  {
-        return homePageElements.greetingMSG.isDisplayed();
+    public boolean getGreetingLabel(String text)  {
+        return homePageElements.greetingMSG.containText(text);
     }
-    public AddNewReportPage openForm() throws InterruptedException {
-//        homePageElements.addButton.click();
-        return new AddNewReportPage(driver);
+
+    @Feature("Submit Form")
+    @Step("click on plus and navigate to location page")
+    public ActivitiesPage navigateToActivitiesPage() {
+        homePageElements.plusIcon.click();
+        return new ActivitiesPage(driver);
     }
+
     public TasksPage navigateToTaskPage() throws InterruptedException {
         homePageElements.taskIcon.click();
         return new TasksPage(driver);
     }
+
 
     /*********************************************************************/
 

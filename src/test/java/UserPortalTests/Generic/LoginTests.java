@@ -6,24 +6,25 @@ import Pages.UserPortal.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 public class LoginTests extends GlobalSetup {
-    String loginTestData = "TestData/Data/roadComponentsLoginData.json";
+    String loginTestData = "TestData/Data/roadComponentsData.json";
     LoginPage loginPage = new LoginPage(driver.getWebDriver());
 
     @Test
     public void testInspectorValidLogin() {
         boolean greetingMSG =
-                loginPage.setUserName(getJson(loginTestData, "inspector","inspectorUsername"))
-                        .setPassword(getJson(loginTestData, "inspector","inspectorPassword"))
-                        .fillLoginForm();
+                loginPage.setUserName(getJson(loginTestData, "roles","inspector","inspectorUsername"))
+                        .setPassword(getJson(loginTestData, "roles","inspector","inspectorPassword"))
+                        .clickLoginBtn()
+                        .getGreeting(getJson(loginTestData, "roles","inspector","InspectorName"));
         Assert.assertTrue(greetingMSG, "Login Failed");
     }
 
     @Test
     public void testInValidLogin() {
-        Label msg =
-                loginPage.setInvalidUserName(getJson(loginTestData, "inspector.inspectorInvalidUsername"))
-                        .setInvalidPassword(getJson(loginTestData, "inspector.inspectorInvalidPassword"))
+        Label errorMsg =
+                loginPage.setInvalidUserName(getJson(loginTestData, "roles","inspector","inspectorInvalidUsername"))
+                        .setInvalidPassword(getJson(loginTestData, "roles","inspector","inspectorInvalidPassword"))
                         .clickOnLoginBTNForInvalidCred();
-        Assert.assertTrue((msg.isDisplayed()), "in valid login failed");
+        Assert.assertTrue((errorMsg.isDisplayed()), "in valid login failed");
     }
 }

@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -20,12 +21,12 @@ public class GlobalSetup {
      * Driver instance used for the tests.
      */
     public static Driver driver = new Driver();
-
     /**
      * Utilities instance used for the tests.
      */
-    public static Utilities utilities = new Utilities(driver);
+    protected static Utilities utilities = new Utilities(driver);
 
+    protected SoftAssert softAssert = new SoftAssert();
     /**
      * This method is executed before the test suite starts.
      * It opens the site and initializes the Utilities instance.
@@ -40,10 +41,10 @@ public class GlobalSetup {
      * This method is executed after the test suite ends.
      * It closes the site.
      */
-    @AfterSuite
-    public void closeSite() {
-        driver.tearDown();
-    }
+//    @AfterSuite
+//    public void closeSite() {
+//        driver.tearDown();
+//    }
 
     /**
      * This method reads a JSON file and returns the value of the specified keys.

@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     LoginElements loginElements = new LoginElements(Element.getWebDriver());
-    Element element = new Element();
     private WebDriver driver;
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -27,9 +26,12 @@ public class LoginPage {
         return this;
     }
     @Step("Click on login button")
-    public boolean fillLoginForm(){
+    public LoginPage clickLoginBtn(){
         loginElements.loginBtn.click();
-        return homePage.getGreetingLabel();
+        return this;  }
+    @Step("Get greeting message")
+    public boolean getGreeting(String text){
+        return homePage.getGreetingLabel(text);
     }
     @Step("Set in valid username")
     public LoginPage setInvalidUserName(String userName){

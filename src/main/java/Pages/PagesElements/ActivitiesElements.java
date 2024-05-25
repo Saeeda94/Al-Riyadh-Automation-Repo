@@ -1,37 +1,45 @@
 package Pages.PagesElements;
 
+import CoreElements.Button;
+import CoreElements.Driver;
+import Pages.Utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import javax.swing.plaf.ButtonUI;
 
 /**
  * This class represents the elements on the 'Add New Report' page.
  * It provides WebElements for the activity dropdown, report type selector, and the next button.
  */
-public class AddNewReportElements {
+public class ActivitiesElements {
     public WebDriver driver;
-
     /**
      * Constructor for the AddNewReportElements class.
      * It sets the WebDriver instance.
      * @param driver The WebDriver instance.
      */
-    public AddNewReportElements(WebDriver driver) {
+    public ActivitiesElements(WebDriver driver) {
         this.driver = driver;
     }
-
+    String activityName;
     /**
      * WebElement representing the activity dropdown on the 'Add New Report' page.
      */
-    public WebElement activityDropdown2 = driver.findElement(By.xpath("//ngx-select-dropdown/div[@tabindex='0']"));
+    public Button activityDropdown2 = new Button(By.xpath("//chk-search-input[1]/ngx-select-dropdown/div/button"));
+    public Button getActivityName(String activityName){
+        return new Button(By.xpath("//ngx-select-dropdown/div/div/ul[2]/li[text()='"+activityName+"']"));
+    }
 
     /**
      * WebElement representing the report type selector on the 'Add New Report' page.
      */
-    public WebElement selectReportType = driver.findElement(By.xpath("//ngx-select-dropdown/div/div/ul[2]/li[1]"));
+    public  Button selectReportType = new Button(By.xpath("//chk-search-input[2]/ngx-select-dropdown/div/button"));
+
 
     /**
      * WebElement representing the next button on the 'Add New Report' page.
      */
-    public WebElement nextButton = driver.findElement(By.cssSelector("button.chk-primary-btn[title='التالي']"));
+    public Button nextButton = new Button(By.cssSelector("button.chk-primary-btn[title='التالي']"));
 }

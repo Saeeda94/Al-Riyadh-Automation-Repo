@@ -1,9 +1,8 @@
 package UserPortalTests.Generic;
 
 import GlobalSetup.GlobalSetup;
-import Pages.UserPortal.HomePage;
+import Pages.UserPortal.GenericPages.HomePage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class LogoutTests extends GlobalSetup {

@@ -76,20 +76,6 @@ public class Element {
         return webDriver.findElement(locator).getText();
     }
 
-    @SneakyThrows
-    public void click(By locator) {
-        waitElement(locator);
-        find(locator).click();
-        try {
-            TakesScreenshot screenshot = (TakesScreenshot) webDriver;
-            File src = screenshot.getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(src, new File(
-                    ".\\TestData\\ScreenShots\\" + getClass().getSimpleName() + "\\" + new Throwable().getStackTrace()[0].getMethodName() + "_" + getCurrentDate() + ".png"));
-        } catch (Exception ignored) {
-        }
-    }
-
-
     public void waitElement(By locator) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -114,6 +100,7 @@ public class Element {
     public WebElement find(By locator) {
         waitElement(locator);
         scrollElement(locator);
+
         highlightElement();
         return webDriver.findElement(locator);
     }
@@ -165,6 +152,9 @@ public class Element {
 
     public boolean isDisplayed() {
         return find(locator).isDisplayed();
+    }
+    public boolean isEnabled() {
+        return find(locator).isEnabled();
     }
 
     public boolean hasClassAttribute(By locator, String attribute) {

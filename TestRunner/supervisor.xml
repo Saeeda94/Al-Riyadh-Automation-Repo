@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Commercial Activities happy scenario workflow">
+    <test verbose="2" preserve-order="true" name="D:/Al Riyadh Automation">
+        <classes>
+
+            <class name="UserPortalTests.Generic.LoginTests">
+                <methods>
+                    <include name="testSupervisorValidLogin"/>
+                </methods>
+            </class>
+            <class name="UserPortalTests.MaradimWorkflow.SupervisorRole.NavigateToTasksTCs">
+                <methods>
+                    <include name="checkThatTheSupervisorCanNavigateToTasksTCs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,8 +1,8 @@
 package UserPortalTests.RoadComponentWorkflow.UnitSupervisor;
 
 import GlobalSetup.GlobalSetup;
-import Pages.UserPortal.HomePage;
-import Pages.UserPortal.LoginPage;
+import Pages.UserPortal.GenericPages.HomePage;
+import Pages.UserPortal.GenericPages.LoginPage;
 import org.testng.annotations.Test;
 
 public class ReviewReportUnitSupTCs extends GlobalSetup {

@@ -1,7 +1,7 @@
 package UserPortalTests.RoadComponentWorkflow.Inspector;
 
 import GlobalSetup.GlobalSetup;
-import Pages.UserPortal.HomePage;
+import Pages.UserPortal.GenericPages.HomePage;
 import UserPortalTests.Generic.LoginTests;
 import org.testng.annotations.Test;
 
@@ -17,7 +17,7 @@ public class SubmitReport extends GlobalSetup {
                 .selectReportType().NavigateToMunicipalityPage()
                 .selectMunicipality(getJson(testData,"pages","Locations","municipalityName"))
                 .navigateToDistrictPage().selectDistrict(getJson(testData,"pages","Locations","districtName"))
-                .navigateToStreetPage().selectStreet(getJson(testData,"pages","Locations","streetName")).navigateToCheckList().fillForm();
+                .navigateToStreetPage().selectStreet().navigateToRoadComponentCheckList().fillForm();
     }
 
 }

@@ -1,0 +1,29 @@
+{
+  "roles": {
+    "inspector": {
+      "inspectorUsername": "maradim.ins",
+      "inspectorPassword": "123456",
+      "inspectorInvalidUsername": "brad",
+      "inspectorInvalidPassword": "password",
+      "InspectorName": "مراقب بلدية(الرقابة علي المرادم)"
+
+    },
+    "supervisor": {
+      "supervisorUsername": "maradim.sv",
+      "supervisorPassword": "123456",
+      "supervisorInvalidUsername": "brad",
+      "supervisorInvalidPassword": "password",
+      "supervisorName": "مشرف بلدية (الرقابة على المرادم)"
+    }
+  },
+  "pages": {
+    "Activities": {
+    "ActivityName": " الرقابة علي المرادم "
+  },
+    "Locations": {
+      "municipalityName": "شقراء",
+      "districtName": "حى الياسمين - بلدية شقراء",
+      "streetName": "غير مسمي 676  1001 - حي حى الياسمين - بلدية شقراء"
+    }
+  }
+}

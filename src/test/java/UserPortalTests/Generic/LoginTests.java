@@ -2,11 +2,11 @@ package UserPortalTests.Generic;
 
 import CoreElements.Label;
 import GlobalSetup.GlobalSetup;
-import Pages.UserPortal.LoginPage;
+import Pages.UserPortal.GenericPages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 public class LoginTests extends GlobalSetup {
-    String loginTestData = "TestData/Data/roadComponentsData.json";
+    String loginTestData = "TestData/Data/MaradimData.json";
     LoginPage loginPage = new LoginPage(driver.getWebDriver());
 
     @Test
@@ -16,6 +16,16 @@ public class LoginTests extends GlobalSetup {
                         .setPassword(getJson(loginTestData, "roles","inspector","inspectorPassword"))
                         .clickLoginBtn()
                         .getGreeting(getJson(loginTestData, "roles","inspector","InspectorName"));
+        Assert.assertTrue(greetingMSG, "Login Failed");
+    }
+
+    @Test
+    public void testSupervisorValidLogin() {
+        boolean greetingMSG =
+                loginPage.setUserName(getJson(loginTestData, "roles","supervisor","supervisorUsername"))
+                        .setPassword(getJson(loginTestData, "roles","supervisor","supervisorPassword"))
+                        .clickLoginBtn()
+                        .getGreeting(getJson(loginTestData, "roles","supervisor","supervisorName"));
         Assert.assertTrue(greetingMSG, "Login Failed");
     }
 

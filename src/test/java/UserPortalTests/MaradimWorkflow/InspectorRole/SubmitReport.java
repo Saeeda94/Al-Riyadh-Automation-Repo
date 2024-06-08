@@ -4,6 +4,7 @@ import Pages.UserPortal.GenericPages.HomePage;
 import Pages.UserPortal.GenericPages.ReportDetailsPage;
 import Pages.UserPortal.MaradimCustomPages.MaradimCheckList;
 import UserPortalTests.Generic.LoginTests;
+import UserPortalTests.Generic.LogoutTests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ public class SubmitReport extends GlobalSetup {
     HomePage homePage = new HomePage(driver.getWebDriver());
     MaradimCheckList maradimCheckList = new MaradimCheckList(driver.getWebDriver());
     ReportDetailsPage reportDetailsPage = new ReportDetailsPage(driver.getWebDriver());
+    LogoutTests logoutTests = new LogoutTests();
     String testData = "TestData/Data/MaradimData.json";
 
     @BeforeMethod(description = "prepare the data for the test")
@@ -74,5 +76,6 @@ public class SubmitReport extends GlobalSetup {
         reportDetailsPage.assertReportState(getJson(testData, "reportStatus", "status1"))
                 .assertAssignedTo(getJson(testData, "assignTo", "assignee1"));
         softAssert.assertAll();
+        logoutTests.testLogout();
     }
 }

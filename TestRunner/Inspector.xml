@@ -14,16 +14,6 @@
                     <include name="checkThatTheInspectorCanNavigateToChecklistTCs"/>
                 </methods>
             </class>
-<!--            <class name="UserPortalTests.MaradimWorkflow.InspectorRole.SubmitReport">-->
-<!--            <methods>-->
-<!--                <include name="checkThatTheInspectorCanSubmitFormTCs"/>-->
-<!--            </methods>-->
-<!--            </class>-->
-<!--            <class name="UserPortalTests.Generic.LogoutTests">&ndash;&gt;-->
-<!--                <methods>-->
-<!--                    <include name="testLogout"/>-->
-<!--                </methods>-->
-<!--            </class>-->
         </classes>
     </test>
 

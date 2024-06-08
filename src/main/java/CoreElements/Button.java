@@ -2,11 +2,12 @@ package CoreElements;
 
 import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 
 import java.io.File;
+import java.util.List;
+
+import static CoreElements.Link.driver;
 
 /**
  * This class represents a Button element in a web page.
@@ -38,6 +39,14 @@ public class Button extends Element{
             FileUtils.copyFile(src, new File(
                     ".\\TestData\\ScreenShots\\" + getClass().getSimpleName() + "\\" + new Throwable().getStackTrace()[0].getMethodName() + "_" + getCurrentDate() + ".png"));
         } catch (Exception ignored) {
+        }
+    }
+    public void uploadPhotoToAllElements(String filePath) {
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        List<WebElement> elements = webDriver.findElements(locator);
+
+        for (WebElement element : elements) {
+            element.sendKeys(filePath);
         }
     }
 }

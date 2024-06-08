@@ -20,13 +20,30 @@ public class ReportDetailsPage {
     }
 
     // Method to interact with report details, for example, to get its text.
-    public String getReportNumber(){
+    public String getReportNumber()  {
+
+
        return reportDetailsElements.reportNumber.getText();
     }
     @Step("check the report number")
-    public boolean isReportNumberDisplayed() {
-        if (getReportNumber().equals(getReportNumber())){
-        return reportDetailsElements.reportNumber.isDisplayed();}
-        else return false;
+    public boolean isReportNumberDisplayed()  {
+       return reportDetailsElements.reportNumber.isDisplayed();
     }
+    @Step("check clicking on show actions")
+    public ReportDetailsPage clickOnShowActionsBtn()  {
+        reportDetailsElements.showActions.click();
+        return this;
+    }
+    @Step("Assert the content of the report state")
+    public ReportDetailsPage assertReportState(String reportState) {
+        reportDetailsElements.txtReportState.softAssertionEqual(reportState);
+        return this;
+    }
+
+    @Step("Assert the content of the assigned to")
+    public ReportDetailsPage assertAssignedTo(String assignedToName) {
+        reportDetailsElements.txtAssignedTo.softAssertionEqual(assignedToName);
+        return this;
+    }
+
 }

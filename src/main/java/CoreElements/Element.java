@@ -23,6 +23,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static CoreElements.Link.driver;
+
 public class Element {
     @Getter
     public static WebDriver webDriver;
@@ -77,7 +79,7 @@ public class Element {
     }
 
     public void waitElement(By locator) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(70));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
@@ -370,12 +372,21 @@ public class Element {
         jsExecutor.executeScript("arguments[0].style.border='2px solid blue'", element);
         jsExecutor.executeScript("arguments[0].style.backgroundColor = 'red';", element);
     }
-
-    public void uploadByXpath(String source, String path) {
-        WebElement uploadField = webDriver.findElement(By.xpath("//*[@data-axis-test-id='" + source + "']"));
-        String dir = System.getProperty("user.dir");
-        String filePath = dir + path;
-        uploadField.sendKeys(filePath);
+    @SneakyThrows
+    public void softAssertionEqual(String expected) {
+        waitElement(locator);
+        softAssert.assertEquals(getContent(locator).trim(), expected);
+        if (getContent(locator).equals(expected)) {
+            highlightAssertedElements(locator);
+        } else {
+            highlightUnAssertedElements(locator);
+            String currentMethod = new Object() {
+            }.getClass().getSimpleName();
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File src = screenshot.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(src, new File(
+                    ".\\TestData\\ScreenShots\\SoftAssertions\\" + getClass().getName() + "\\" + currentMethod + "_" + getCurrentDate() + ".png"));
+        }
     }
 
     public String setXpathForCells(int row, int col) {

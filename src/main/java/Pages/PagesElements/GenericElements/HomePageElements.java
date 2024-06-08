@@ -22,3 +22,4 @@ public class HomePageElements {
     public Link logoutLink=new Link(By.xpath("//a/span[contains(text(),'تسجيل خروج')]"));
     public Link logoutButton=new Link(By.xpath("//modal-container/div[2]/div/div[3]/div/chk-button[2]/button/span"));
 }
+

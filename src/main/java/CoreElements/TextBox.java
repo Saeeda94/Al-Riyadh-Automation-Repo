@@ -28,7 +28,6 @@ public class TextBox extends Element {
     public void setText(String data) {
         waitElement(locator);
         find(locator).isEnabled();
-        find(locator).clear();
         find(locator).sendKeys(data);
     }
 

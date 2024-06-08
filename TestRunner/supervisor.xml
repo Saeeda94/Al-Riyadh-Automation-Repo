@@ -12,8 +12,15 @@
             <class name="UserPortalTests.MaradimWorkflow.SupervisorRole.NavigateToTasksTCs">
                 <methods>
                     <include name="checkThatTheSupervisorCanNavigateToTasksTCs"/>
+                    <include name="checkThatTheSupervisorCanApproveTheReportTCs"/>
                 </methods>
             </class>
+<!--            <class name="UserPortalTests.MaradimWorkflow.SupervisorRole.NavigateToTasksTCs">-->
+<!--                <methods>-->
+<!--                  -->
+<!--                </methods>-->
+<!--            </class>-->
+
         </classes>
     </test>
 </suite>

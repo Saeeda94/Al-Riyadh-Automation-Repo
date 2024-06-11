@@ -37,14 +37,15 @@ public class GlobalSetup {
         utilities = new Utilities(driver);
     }
 
+
     /**
      * This method is executed after the test suite ends.
      * It closes the site.
      */
-//    @AfterSuite
-//    public void closeSite() {
-//        driver.tearDown();
-//    }
+    @AfterTest
+    public void closeSite() {
+        driver.tearDown();
+    }
 
     /**
      * This method reads a JSON file and returns the value of the specified keys.

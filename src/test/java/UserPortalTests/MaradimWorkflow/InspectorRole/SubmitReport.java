@@ -6,6 +6,8 @@ import Pages.UserPortal.MaradimCustomPages.MaradimCheckList;
 import UserPortalTests.Generic.LoginTests;
 import UserPortalTests.Generic.LogoutTests;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import GlobalSetup.GlobalSetup;
@@ -19,6 +21,8 @@ public class SubmitReport extends GlobalSetup {
 
     @BeforeMethod(description = "prepare the data for the test")
     public void fillTestDate() {
+        LoginTests loginTests = new LoginTests();
+        loginTests.testInspectorValidLogin();
         homePage.navigateToActivitiesPage()
                 .selectActivity(getJson(testData, "pages", "Activities", "ActivityName"))
                 .selectReportType()
@@ -70,12 +74,16 @@ public class SubmitReport extends GlobalSetup {
 
     }
 
-    @Test(description = "Check that the inspector can navigate to Maradim CheckList")
-    public void checkThatTheInspectorCanNavigateToChecklistTCs() {
+    @Test(description = "Check that the inspector can navigate to Maradim CheckList" )
+    public void checkThatTheInspectorCanSubmitReport() {
         Assert.assertEquals(maradimCheckList.clickSubmit().assertTheDisplayOfTheSuccessfulMsg(), true);
         reportDetailsPage.assertReportState(getJson(testData, "reportStatus", "status1"))
                 .assertAssignedTo(getJson(testData, "assignTo", "assignee1"));
         softAssert.assertAll();
+    }
+    @AfterClass
+    public void clickOnSignOut() {
+        maradimCheckList.clickOnSuccessMsg();
         logoutTests.testLogout();
     }
 }

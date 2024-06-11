@@ -27,11 +27,6 @@ public class MaradimCheckList {
        maradimElements.getSpecificQuestionOptionWithSpace(question, option).radioBtnClick();
         return this;
     }
-//    @Step("Upload first image")
-//    public MaradimCheckList uploadFirstImage(String parentQuestion,int questionIndex,String path){
-//        maradimElements.uploadImage(parentQuestion,questionIndex).setText(path);
-//        return this;
-//    }
     @Step("Answer specific question option")
     public MaradimCheckList answerSpecificQuestionOption(String question, String option){
         maradimElements.getSpecificQuestionOption(question, option).radioBtnClick();
@@ -69,5 +64,9 @@ public class MaradimCheckList {
     @Step("Assert the presence of the successful message")
     public boolean assertTheDisplayOfTheSuccessfulMsg(){
         return maradimElements.txtSuccessMsg.isDisplayed();
+    }
+    @Step("Click on the Successfull message")
+    public void clickOnSuccessMsg(){
+        maradimElements.txtSuccessMsg.click();
     }
 }

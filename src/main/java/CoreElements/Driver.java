@@ -54,6 +54,6 @@ public class Driver {
      * Closes the browser and ends the WebDriver session.
      */
     public void tearDown() {
-        webDriver.quit();
+        webDriver.close();
     }
 }

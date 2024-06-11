@@ -30,6 +30,15 @@ public class LoginTests extends GlobalSetup {
     }
 
     @Test
+    public void testRepresentativeValidLogin() {
+        boolean greetingMSG =
+                loginPage.setUserName(getJson(loginTestData, "roles","representative","representativeUsername"))
+                        .setPassword(getJson(loginTestData, "roles","representative","representativePassword"))
+                        .clickLoginBtn()
+                        .getGreeting(getJson(loginTestData, "roles","representative","representativeName"));
+        Assert.assertTrue(greetingMSG, "Login Failed");
+    }
+    @Test
     public void testInValidLogin() {
         Label errorMsg =
                 loginPage.setInvalidUserName(getJson(loginTestData, "roles","inspector","inspectorInvalidUsername"))

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Commercial Activities happy scenario workflow">
+
+    <test verbose="2" preserve-order="true" name="D:/Al Riyadh Automation">
+        <classes>
+            <class name="UserPortalTests.MaradimWorkflow.InspectorRole.SubmitReport">
+                <methods>
+                    <include name="checkThatTheInspectorCanSubmitReport"/>
+                </methods>
+            </class>
+            <class name="UserPortalTests.MaradimWorkflow.SupervisorRole.NavigateToTasksTCs">
+                <methods>
+                    <include name="checkThatTheSupervisorCanNavigateToTheCurrentlySubmittedReportTC"/>
+                    <include name="checkThatTheSupervisorCanApproveTheReportTCs"/>
+                </methods>
+            </class>
+
+            <class name="UserPortalTests.MaradimWorkflow.Representative.RepresentativeTcs">
+                <methods>
+                    <include name="checkThatTheRepresentativeCanNavigateToTheCurrentlySubmittedReportTC"/>
+                    <include name="checkThatTheRepresentativeCanApproveTheReportTC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+
+<!--
+// we need to logout after class
+-->

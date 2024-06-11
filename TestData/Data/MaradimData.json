@@ -13,6 +13,13 @@
       "supervisorInvalidUsername": "brad",
       "supervisorInvalidPassword": "password",
       "supervisorName": "مشرف بلدية (الرقابة على المرادم)"
+    },
+    "representative": {
+      "representativeUsername": "maradim.rep",
+      "representativePassword": "123456",
+      "supervisorInvalidUsername": "brad",
+      "supervisorInvalidPassword": "password",
+      "representativeName": "مسؤول قسم التشغيل والصيانة"
     }
   },
   "pages": {
@@ -74,9 +81,24 @@
   },
   "reportStatus": {
     "status1": "مفتوحة",
-    "status2": "مغلقة"
+    "status2": "مغلقة",
+    "status3": "تم اعتماد التقرير",
+    "status4": "تم قبول المعالجة",
+    "status5": "مغلق لأنتهاء المعالجة"
   },
   "assignTo": {
-    "assignee1": "مشرف البلدية"
+    "assignee1": "مشرف البلدية",
+    "assignee2": "مسؤول قسم التشغيل والصيانة"
+  },
+  "actions": {
+    "action1": "قبول التقرير واسنادة الى قسم الصيانة والتشغيل",
+    "action2": "رفض التقرير",
+    "action3": "قبول المعالجة",
+    "action4": "تمت المعالجه"
+  },
+  "actionOptions": {
+    "option1": " الملاحظة ",
+    "option2": " الملحقات "
   }
 }
+

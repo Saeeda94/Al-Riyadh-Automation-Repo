@@ -31,7 +31,12 @@ public class TasksPage {
     public ReportDetailsPage navigateToReportDetails(){
         tasksElements.task.click();
         ArrayList<String> tabs = new ArrayList<String>(webDriver.getWindowHandles());
-        webDriver.switchTo().window(tabs.get(1));
+        if(tabs.size()>2){
+            webDriver.switchTo().window(tabs.get(2));
+        }
+        else{
+            webDriver.switchTo().window(tabs.get(1));
+        }
         return reportDetailsPage;
     }
 }

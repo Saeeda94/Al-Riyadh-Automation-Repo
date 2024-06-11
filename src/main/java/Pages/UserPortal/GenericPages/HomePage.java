@@ -49,8 +49,6 @@ public class HomePage {
     }
     @Step("click on Logout Button")
     public boolean clickOnLogoutBTN(){
-//        Alert alert = driver.switchTo().alert();
-//        alert.accept();
       homePageElements.logoutButton.click();
        return loginElements.loginBtn.isDisplayed();
     }

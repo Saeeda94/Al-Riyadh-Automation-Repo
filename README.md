@@ -23,16 +23,25 @@ we have been used OOP paradigm to implement this framework, to make it flexible,
 - File System Access: The project appears to interact with the file system, for example to upload photos. You need to have the necessary permissions to read from and write to the relevant directories. 
 
 ## ChallangesAndHowToResolveThem
-1- There are more than one clickable control like(Button, Radio Button, Check Box, Link) and more than one editable controls like(Text Box, Text Area)
-2- There are more changable data
+- There are more than one clickable control like(Button, Radio Button, Check Box, Link) and more than one editable controls like(Text Box, Text Area)
+- There are more changable data
 - There are more than workflow
 - There are fixed pages with the same elements but the elements may be incremented or decremented depending on the implemented workflow
 - There are fixed tests like(login and logout)
 - We need to execute fully workflow path or only one branch once
 - The elements take a while to be presented or displayed
 - Need to print the test result in the report
+
 We have resolved those above challanges through following the below techniques 
-for the 
+- For the first point we have used the OOP paradigm to resolve this challange so you can check the structure for more details
+- For the second point we have read all workflow data through JSON file and every workflow has it is own JSON file
+- For the third point we have created a package for every workflow Test cases and after that we have created a package for each workflow role that contains files which provided the the role's test cases
+- For the fourth point we have created an effective way for locating elements by using XPATH
+- For the fifth point we have created files for those fixed tests and call them when we need
+- For the sixth point we have created a XML file contains all required tests for executing the needed workflow path
+- For the seventh point we follow an effective way for locating elements => befor interacting with the element we user the explicity wait tell the element is presented then interacting with it
+- For the Eighth point we use the allure reports to show us the test summary report after finishing the executon session
+
 ## UsedFeaturesAndTools
 - Applying The OOP Paradigm
 - Java: The project is written in Java, which is a popular object-oriented programming language.  

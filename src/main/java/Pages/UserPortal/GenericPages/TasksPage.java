@@ -60,6 +60,7 @@ public class TasksPage {
     public ReportDetailsPage navigateToReportDetails(){
         tasksElements.task.click();
         ArrayList<String> tabs = new ArrayList<String>(webDriver.getWindowHandles());
+
         if(tabs.size()>2){
             webDriver.switchTo().window(tabs.get(2));
         }

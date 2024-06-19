@@ -34,4 +34,6 @@ public class ActivitiesElements {
      * WebElement representing the next button on the 'Add New Report' page.
      */
     public Button nextButton = new Button(By.cssSelector("button.chk-primary-btn[title='التالي']"));
+
+
 }

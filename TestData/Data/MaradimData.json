@@ -91,10 +91,10 @@
     "assignee2": "مسؤول قسم التشغيل والصيانة"
   },
   "actions": {
-    "action1": "قبول التقرير واسنادة الى قسم الصيانة والتشغيل",
-    "action2": "رفض التقرير",
-    "action3": "قبول المعالجة",
-    "action4": "تمت المعالجه"
+    "approveAndAssignToOperationAndMaintenanceDepartment": "قبول التقرير واسنادة الى قسم الصيانة والتشغيل",
+    "cancelReport": "رفض التقرير",
+    "approveProcessing": "قبول المعالجة",
+    "processingCompleted": "تمت المعالجه"
   },
   "actionOptions": {
     "option1": " الملاحظة ",

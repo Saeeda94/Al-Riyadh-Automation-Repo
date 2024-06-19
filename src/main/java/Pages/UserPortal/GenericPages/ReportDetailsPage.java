@@ -104,7 +104,6 @@ public class ReportDetailsPage {
                     reportDetailsElements.attachments.uploadPhotoToAllElements("C:/Users/DELL/Pictures/images/Test.PNG");
                 reportDetailsElements.attachments.uploadPhotoToAllElements("C:/Users/DELL/Pictures/images/test2.PNG");
             }
-            //will check the action type(attachment or note) firstly then fill the required actions then click on the yes button
         }
         return this;
     }

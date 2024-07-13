@@ -37,6 +37,8 @@ public class Element {
         Element.webDriver = webDriver;
     }
 
+
+// why this method ?
     public static String getFutureDate() {
         Date dt = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -45,7 +47,7 @@ public class Element {
         dt = calendar.getTime();
         return new SimpleDateFormat("dd/MM/yyyy").format(dt);
     }
-
+//why ?
     public static WebElement setElement(String source) {
         return webDriver.findElement(By.xpath("//*[@data-axis-test-id='" + source + "']"));
     }
@@ -53,7 +55,7 @@ public class Element {
     public static int generateRNumber() {
         return Integer.parseInt(String.valueOf(faker.number().numberBetween(10, 99)));
     }
-
+//extract in a separate util
     public static String getCurrentDate() {
         return new SimpleDateFormat("dd-MM-yyyy hh.mm.ss a").format(new Date());
     }
@@ -82,7 +84,7 @@ public class Element {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(70));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
+//waiting utils 
     public void waitElementToBeDisplayed(By locator, String value) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.attributeContains(locator, "src", value));

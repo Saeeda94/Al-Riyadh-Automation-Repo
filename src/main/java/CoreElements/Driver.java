@@ -38,6 +38,8 @@ public class Driver {
     /**
      * Maximizes the browser window.
      */
+    //why this method?
+    //1:1 mapping ?
     public void maximizeWindow() {
         webDriver.manage().window().maximize();
     }
@@ -46,6 +48,7 @@ public class Driver {
      * Navigates to the specified URL.
      * @param url The URL to navigate to.
      */
+    //1:1 mapping ?
     public void goTo(String url) {
         webDriver.get(url);
     }

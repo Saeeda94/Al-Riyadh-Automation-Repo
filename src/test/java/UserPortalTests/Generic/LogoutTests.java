@@ -25,6 +25,7 @@ public class LogoutTests extends GlobalSetup {
                 homePage.clickOnArrowBTN()
                         .clickOnLogoutLink()
                         .clickOnLogoutBTN();
+        //should exist function
         Assert.assertTrue(loginBTNIsExist,"user can not be able to logout");
     }
 }

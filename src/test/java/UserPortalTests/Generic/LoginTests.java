@@ -14,6 +14,7 @@ public class LoginTests extends GlobalSetup {
     /**
      * The path to the JSON file containing the test data for the login tests.
      */
+    //java names conventions
     String loginTestData = "TestData/Data/MaradimData.json";
 
     /**
@@ -28,6 +29,8 @@ public class LoginTests extends GlobalSetup {
     @Test
     public void testInspectorValidLogin() {
         boolean greetingMSG =
+                //intensive data passing
+                //why fluent design ?
                 loginPage.setUserName(getJson(loginTestData, "roles","inspector","inspectorUsername"))
                         .setPassword(getJson(loginTestData, "roles","inspector","inspectorPassword"))
                         .clickLoginBtn()

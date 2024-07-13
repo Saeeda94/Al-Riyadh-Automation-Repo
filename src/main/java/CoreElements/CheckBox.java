@@ -17,5 +17,7 @@ public class CheckBox extends ClickableElements {
     public CheckBox(By checkBox) {
         this.setLocator(checkBox);
     }
-
+//checkbox method
+    //is checked?
+    //check() => check status then takes action
 }

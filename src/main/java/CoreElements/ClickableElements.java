@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 import java.io.File;
 import java.util.List;
-
+//what element should this present , if it doesn't why it is not abstract ?
 public class ClickableElements extends Element{
     /**
      * Clicks on the button element located by the locator.
@@ -28,6 +28,8 @@ public class ClickableElements extends Element{
         } catch (Exception ignored) {
         }
     }
+
+    //why here?
     public void uploadPhotoToAllElements(String filePath) {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         List<WebElement> elements = webDriver.findElements(locator);
